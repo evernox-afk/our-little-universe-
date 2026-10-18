@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090912">
+<title>Our little universe 🖤</title>
+<style>
+:root{--bg:#090912;--panel:#151421;--pink:#ff5b9b;--violet:#a78bfa;--text:#f8f4ff;--muted:#b7b0c9}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:20px;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at 10% 0%,#38204b 0,transparent 38%),radial-gradient(ellipse at 95% 75%,#261238 0,transparent 35%),var(--bg)}
+.stars{position:fixed;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 80px 110px,#ff9bc4,transparent),radial-gradient(1px 1px at 150px 60px,#fff,transparent);background-size:190px 150px}
+.wrap{position:relative;width:min(100%,480px);margin:0 auto}.eyebrow{text-align:center;color:var(--muted);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin:12px 0 18px}
+.card{background:linear-gradient(150deg,#1c1a2ef2,#0d0d19f5);border:1px solid #39304e;border-radius:26px;padding:25px 20px;box-shadow:0 25px 90px #0009;margin-bottom:16px;overflow:hidden}
+.badge{display:inline-block;border:1px solid #574064;color:#ffb4d1;border-radius:99px;padding:7px 12px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(2.25rem,10vw,3.2rem);line-height:1.05;margin:20px 0 10px}h1 span,.pink{color:var(--pink);font-style:italic}
+.sub{color:var(--muted);line-height:1.65;margin:0 auto 18px}
+.gift{font-size:4.4rem;margin:10px 0;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 20px #ff4f9160)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+button,.filelabel{border:0;color:#160d20;font-weight:750;font-size:.95rem;padding:13px 17px;border-radius:99px;background:linear-gradient(100deg,#ff77a9,#c6a0ff);cursor:pointer;display:inline-block;text-align:center}
+button.secondary{background:#211b32;border:1px solid #514365;color:#f5eaff}
+button:disabled{opacity:.6}.full{width:100%}.hint,.small{color:#8f88a4;font-size:.78rem;line-height:1.5}.message{display:none;margin-top:20px;padding:19px;border-radius:18px;background:#0b0b16;border:1px solid #39304e;text-align:left;animation:appear .5s ease}.message h2{color:#ff8bb7;font-family:Georgia,serif;font-weight:500;margin:0 0 12px;font-size:1.6rem}.message p{color:#e2ddec;line-height:1.75;white-space:pre-line}.sign{text-align:right;color:#c6a0ff;font-style:italic}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+label.field{display:block;color:#c8c1d8;font-size:.85rem;margin:14px 0 6px}input[type=text],textarea{width:100%;border:1px solid #413751;background:#0d0d19;color:#fff;border-radius:12px;padding:12px;font:inherit}textarea{min-height:95px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.photo-grid img{width:100%;height:150px;object-fit:cover;border-radius:14px;border:1px solid #514365}.photo-grid:empty{display:none}
+.center{text-align:center}.heart-btn{font-size:1.6rem;background:#24182e;color:#ff6ca8;border:1px solid #56314c;padding:12px 18px}.heart-count{color:#ff9bc4;margin-left:8px;font-weight:700}.rec-status{margin:10px 0;color:#ffb4d1;font-size:.82rem}.audio-wrap audio{width:100%;margin-top:12px}.footer{text-align:center;color:#777188;font-size:.72rem;margin:18px 0}.heart-float{position:fixed;top:-25px;z-index:8;pointer-events:none;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(300deg);opacity:0}}
+input[type=file]{display:none}
+</style>
+</head>
+<body><div class="stars"></div><main class="wrap">
+<div class="eyebrow">a tiny corner of the universe ✦</div>
+<section class="card center">
+<div class="badge">✦ friendship file: classified ✦</div>
+<h1>For <span id="titleName">my favourite human</span>.</h1>
+<p class="sub">Some people make ordinary days feel like memories. This little page is for one of them.</p>
+<div class="gift">🎁</div>
+<button class="full" id="openBtn">Unlock your surprise ↗</button>
+<div class="hint" style="margin-top:12px">Tap to reveal the message. Keep scrolling for photos, voice & little memories.</div>
+<div class="message" id="message"><h2 id="messageTitle">Hey, bestie 🖤</h2><p id="messageBody">Life gets weird, people change, and days get heavy. I'm genuinely glad our paths crossed.\n\nThanks for the laughs, random conversations, and little moments that became memories. No dramatic speech — just know you've got a place in my corner. Keep being your wonderfully chaotic self.</p><p class="sign" id="signature">— your partner in chaos ✦</p></div>
+</section>
+<section class="card">
+<div class="badge">01 / little details</div><h2 style="font-family:Georgia,serif;font-weight:500">Made just for <span class="pink">you</span></h2>
+<p class="small">Change these names and message before sharing the page. These edits appear on this device; to make them permanent for everyone, update the text in the HTML file.</p>
+<div class="row"><div><label class="field" for="theirName">Their name (her/him)</label><input id="theirName" type="text" placeholder="Best friend's name"></div><div><label class="field" for="yourName">Your name</label><input id="yourName" type="text" placeholder="Your name"></div></div>
+<label class="field" for="customMessage">Your personal message</label><textarea id="customMessage" placeholder="Write your own message here..."></textarea>
+<button class="full" id="applyBtn" style="margin-top:12px">Preview my names & message</button>
+</section>
+<section class="card">
+<div class="badge">02 / memory gallery</div><h2 style="font-family:Georgia,serif;font-weight:500">Our little <span class="pink">moments</span> 📸</h2>
+<p class="small">Choose photos from your phone to preview them here. Photos selected in this preview are not uploaded or saved online automatically.</p>
+<label class="filelabel" for="photoInput">＋ Add photos</label><input id="photoInput" type="file" accept="image/*" multiple>
+<div class="photo-grid" id="photoGrid"></div>
+</section>
+<section class="card center">
+<div class="badge">03 / a voice note</div><h2 style="font-family:Georgia,serif;font-weight:500">A message in my <span class="pink">voice</span> 🎙️</h2>
+<p class="small">Record a short voice note in your browser. Your browser may ask for microphone permission. Recording works only if the browser supports it.</p>
+<button class="full" id="recordBtn">● Start recording</button><div class="rec-status" id="recStatus">No recording yet</div><div class="audio-wrap" id="audioWrap"></div>
+</section>
+<section class="card center">
+<div class="badge">04 / tiny reminder</div><h2 style="font-family:Georgia,serif;font-weight:500">You matter. <span class="pink">Always.</span></h2>
+<p class="sub">If life ever gets loud, remember there's someone rooting for you.</p>
+<button class="heart-btn" id="heartBtn" aria-label="Send a heart">♥</button><span class="heart-count" id="heartCount">0 hearts sent</span>
+<p class="hint">Tap the heart for a little burst of love.</p>
+</section>
+<div class="footer">made with <span class="pink">♥</span> & midnight energy</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let recorder, chunks=[], stream, recording=false, hearts=0;
+$('openBtn').addEventListener('click',()=>{$('message').style.display='block';$('openBtn').textContent='Surprise unlocked ♥';$('openBtn').disabled=true;rainHearts(20);});
+$('applyBtn').addEventListener('click',()=>{
+ const theirs=$('theirName').value.trim()||'my favourite human';
+ const yours=$('yourName').value.trim()||'your partner in chaos';
+ $('titleName').textContent=theirs;
+ $('messageTitle').textContent='Hey, '+theirs+' 🖤';
+ const custom=$('customMessage').value.trim();
+ if(custom)$('messageBody').textContent=custom;
+ $('signature').textContent='— '+yours+' ✦';
+ $('message').style.display='block';$('openBtn').textContent='Surprise unlocked ♥';$('openBtn').disabled=true;
+});
+$('photoInput').addEventListener('change',e=>{
+ for(const file of e.target.files){if(!file.type.startsWith('image/'))continue;const img=document.createElement('img');img.alt='A selected memory';img.src=URL.createObjectURL(file);$('photoGrid').appendChild(img);}
+});
+$('heartBtn').addEventListener('click',()=>{hearts++;$('heartCount').textContent=hearts+(hearts===1?' heart sent':' hearts sent');rainHearts(12);});
+function rainHearts(n){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='heart-float';s.textContent=['♥','♡','✦','💗'][Math.floor(Math.random()*4)];s.style.left=Math.random()*100+'vw';s.style.color=Math.random()>.5?'#ff77a9':'#c6a0ff';s.style.fontSize=(14+Math.random()*20)+'px';s.style.animationDuration=(2+Math.random()*2)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),4200);}}
+$('recordBtn').addEventListener('click',async()=>{
+ if(!recording){
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!window.MediaRecorder){$('recStatus').textContent='Voice recording is not supported in this browser. Try an updated browser.';return;}
+  try{stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});const url=URL.createObjectURL(blob);$('audioWrap').innerHTML='';const audio=document.createElement('audio');audio.controls=true;audio.src=url;$('audioWrap').appendChild(audio);const a=document.createElement('a');a.href=url;a.download='bestfriend-voice-note.webm';a.textContent='Download voice note';a.style='display:inline-block;color:#ff9bc4;margin-top:10px';$('audioWrap').appendChild(a);stream.getTracks().forEach(t=>t.stop());};recorder.start();recording=true;$('recordBtn').textContent='■ Stop recording';$('recStatus').textContent='Recording… speak from the heart.';}
+  catch(err){$('recStatus').textContent='Microphone permission was blocked or unavailable. Allow microphone access and try again.';}
+ }else{recorder.stop();recording=false;$('recordBtn').textContent='● Record again';$('recStatus').textContent='Recording ready — play it back or download it.';}
+});
+</script>
+</body></html>
